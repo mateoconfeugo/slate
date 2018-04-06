@@ -1,375 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+<head lang="en">
+<meta charset="UTF-8">
+<title> Game of Life</title>
 
+    <link rel="stylesheet" type="text/css" href="https://viebel.github.io/klipse/css/main.css">
     <style>
-      .highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
-.highlight, .highlight .w {
-  color: #f8f8f2;
-  background-color: #272822;
-}
-.highlight .err {
-  color: #272822;
-  background-color: #f92672;
-}
-.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
-  color: #75715e;
-}
-.highlight .cp {
-  color: #f4bf75;
-}
-.highlight .nt {
-  color: #f4bf75;
-}
-.highlight .o, .highlight .ow {
-  color: #f8f8f2;
-}
-.highlight .p, .highlight .pi {
-  color: #f8f8f2;
-}
-.highlight .gi {
-  color: #a6e22e;
-}
-.highlight .gd {
-  color: #f92672;
-}
-.highlight .gh {
-  color: #66d9ef;
-  background-color: #272822;
-  font-weight: bold;
-}
-.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
-  color: #ae81ff;
-}
-.highlight .kc {
-  color: #fd971f;
-}
-.highlight .kt {
-  color: #fd971f;
-}
-.highlight .kd {
-  color: #fd971f;
-}
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
-  color: #a6e22e;
-}
-.highlight .sr {
-  color: #a1efe4;
-}
-.highlight .si {
-  color: #cc6633;
-}
-.highlight .se {
-  color: #cc6633;
-}
-.highlight .nn {
-  color: #f4bf75;
-}
-.highlight .nc {
-  color: #f4bf75;
-}
-.highlight .no {
-  color: #f4bf75;
-}
-.highlight .na {
-  color: #66d9ef;
-}
-.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
-  color: #a6e22e;
-}
-.highlight .ss {
-  color: #a6e22e;
-}
+        pre{
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
-  </head>
+</head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;,&quot;clojure&quot;,&quot;c++&quot;,&quot;c&quot;,&quot;java&quot;,&quot;php&quot;,&quot;lua&quot;,&quot;C#&quot;,&quot;rust&quot;,&quot;perl&quot;,&quot;haskell&quot;,&quot;PowerShell&quot;,&quot;swift&quot;,&quot;scala&quot;,&quot;go&quot;]">
-    <a href="#" id="nav-button">
-      <span>
-        NAV
-        <img src="images/navbar.png" alt="Navbar" />
-      </span>
-    </a>
-    <div class="tocify-wrapper">
-      <img src="images/logo.png" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-              <a href="#" data-language-name="clojure">clojure</a>
-              <a href="#" data-language-name="c++">c++</a>
-              <a href="#" data-language-name="c">c</a>
-              <a href="#" data-language-name="java">java</a>
-              <a href="#" data-language-name="php">php</a>
-              <a href="#" data-language-name="lua">lua</a>
-              <a href="#" data-language-name="C#">C#</a>
-              <a href="#" data-language-name="rust">rust</a>
-              <a href="#" data-language-name="perl">perl</a>
-              <a href="#" data-language-name="haskell">haskell</a>
-              <a href="#" data-language-name="PowerShell">PowerShell</a>
-              <a href="#" data-language-name="swift">swift</a>
-              <a href="#" data-language-name="scala">scala</a>
-              <a href="#" data-language-name="go">go</a>
-        </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
-      <div id="toc">
-      </div>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-        </ul>
-    </div>
-    <div class="page-wrapper">
-      <div class="dark-box"></div>
-      <div class="content">
-        <h1 id="introduction">Introduction</h1>
+<body class="container">
 
-<p>Welcome to the Ltd API! You can use our API to access Ltd API endpoints, which can get information on various entities, reports, and breeds in our database.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<h1> Game of life</h1>
 
-<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&rsquo;s documentation.</p>
+    <p>Ths page is <strong>live</strong> and <strong>interactive</strong>
+powered by the <a href="https://github.com/viebel/klipse">klipse plugin</a>:</p>
 
-<h1 id="authentication">Authentication</h1>
+<ol>
+  <li><strong>Live</strong>: The code is executed in your browser</li>
+  <li><strong>Interactive</strong>: You can modify the code and it is evaluated as you type</li>
+</ol>
 
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'ltd'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Ltd</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'subscription_api_token'</span><span class="p">)</span>
-</code></pre><pre class="highlight python"><code><span class="kn">import</span> <span class="nn">ltd</span>
+<h2> How to use the framework?</h2>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">ltd</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'subscription_api_token'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: subscription_api_token"</span>
-</code></pre><pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">ltd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ltd'</span><span class="p">);</span>
+require the following to load the framework:
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">ltd</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'subscription_api_token'</span><span class="p">);</span>
+<pre ><code class="klipse"
+data-external-libs="https://raw.githubusercontent.com/matlux/game-of-life/self-host-clojurescript/src">
+(require '[zone.lambda.game.board :as b :refer [DEAD ALIVE]])
 </code></pre>
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">subscription_api_token</code> with your API key.</p>
-</blockquote>
 
-<p>Ltd uses API keys to allow access to the API. You can register a new Ltd API key at our <a href="https://ltdapi.com/developers">developer portal</a>.</p>
 
-<p>Ltd expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code class="prettyprint">Authorization: subscription_api_token</code></p>
+<pre class="hidden">
+<code class="klipse" >
+(def canvas (atom nil))
+(def colour (atom "green"))
 
-<aside class="notice">
-You must replace <code>subscription_api_token</code> with your personal API key.
-</aside>
+(defn init []
+  (let [canvas (js/document.getElementById @canvas)
+        ctx (.getContext canvas "2d")
+        w (.-width canvas)
+        h (.-height canvas)]
+    (.clearRect ctx 0 0 w h)
+    (set! (.-fillStyle ctx) "black")
+    (.fillRect ctx 0 0 w h)))
 
-<h1 id="reports">Reports</h1>
+(defn rect [x1 y1 color]
+  (let [canvas (js/document.getElementById @canvas)
+        ctx (.getContext canvas "2d")
+        w (.-width canvas)
+        h (.-height canvas)]
+    (set! (.-fillStyle ctx) color)
+    (.fillRect ctx x1 y1 10  10)))
 
-<h2 id="get-all-reports">Get All Reports</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'ltd'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Ltd</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'subscription_api_token'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">reports</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python"><code><span class="kn">import</span> <span class="nn">ltd</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">ltd</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'subscription_api_token'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">reports</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/reports"</span>
-  -H <span class="s2">"Authorization: subscription_api_token"</span>
-</code></pre><pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">ltd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ltd'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">ltd</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'subscription_api_token'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">reports</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">reports</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+(defn draw [arena]
+               (doseq [x (range 0 b/size)
+                       y (range 0 b/size)]
+                      (when-let [hue (if (= (get arena (b/c2dto1d b/size [x y])) 'i) (+ 30 (int (rand 75))))]
+                                (rect (* x 10) (* y 10) (if hue @colour "black")))))
 </code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"total-filing-amount"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"registrant"</span><span class="p">:</span><span class="w"> </span><span class="mi">682</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"date_range_start"</span><span class="p">:</span><span class="w"> </span><span class="mi">20150101</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"date_range_end"</span><span class="p">:</span><span class="w"> </span><span class="mi">20180101</span><span class="p">,</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clients-per-issue"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"registrant"</span><span class="p">:</span><span class="w"> </span><span class="mi">682</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"date_range_start"</span><span class="p">:</span><span class="w"> </span><span class="mi">20150101</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"date_range_end"</span><span class="p">:</span><span class="w"> </span><span class="mi">20180101</span><span class="p">,</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all reports.</p>
 
-<h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://example.com/api/reports</code></p>
+Let's define the rules of the game:
 
-<h3 id="query-parameters">Query Parameters</h3>
+<pre ><code class="klipse" >
 
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_entities</td>
-<td>false</td>
-<td>If set to true, the result will also include entities.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include reports that have already been adopted.</td>
-</tr>
-</tbody></table>
 
-<aside class="success">
-Remember — a happy report is an authenticated report!
-</aside>
+(defn neighbour-cells [block]
+  (concat (subvec (vec block) 0 4) (subvec (vec  block) 5 9)))
+(defn neighbour-count [block]
+  (count (filter #(= % ALIVE) (neighbour-cells block))))
+(defn is-alive? [board i]
+  (= (get board i) ALIVE))
+(defn coords2state [board coords]
+  (map #(get board %) coords))
 
-<h2 id="get-a-specific-report">Get a Specific Report</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'ltd'</span>
+(defn parse-block [board block-coords]
+  (let [i (get block-coords 4)
+        ncount (neighbour-count (coords2state board block-coords))]
+    (if (is-alive? board i)
+      (cond
+        (< ncount 2) DEAD
+        (or (= ncount 2) (= ncount 3)) ALIVE
+        (> ncount 3) DEAD)
+      (if (= ncount 3)
+        ALIVE
+        DEAD))))
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Ltd</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'subscription_api_token'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">reports</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python"><code><span class="kn">import</span> <span class="nn">ltd</span>
+(defn apply-rules [board]
+  (mapv (fn [i]
+          (let [mov (partial b/move i)] (parse-block board [(mov -1 -1) (mov 0 -1) (mov +1 -1)
+                                                          (mov -1 0) i           (mov +1 0)
+                                                          (mov -1 +1) (mov 0 +1) (mov +1 +1)])))
+        (range (* b/column-nb b/raw-nb))))
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">ltd</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'subscription_api_token'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">reports</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/reports/2"</span>
-  -H <span class="s2">"Authorization: subscription_api_token"</span>
-</code></pre><pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">ltd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ltd'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">ltd</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'subscription_api_token'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">reports</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+(defn game-of-life-step [{:keys [board] :as state}]
+  (reset! b/arena board)
+  (let [new-board (apply-rules board)]
+    {:board new-board}))
 </code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clients-per-issue"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"registrant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"date_range_start"</span><span class="p">:</span><span class="w"> </span><span class="mi">20150101</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"date_range_end"</span><span class="p">:</span><span class="w"> </span><span class="mi">20180101</span><span class="p">,</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific report.</p>
 
-<h3 id="http-request">HTTP Request</h3>
+<canvas id="canvas--regular-n-gon" class="center" width="610" height="610"></canvas>
 
-<p><code class="prettyprint">GET http://example.com/reports/&lt;ID&gt;</code></p>
+<pre >
+<code class="klipse" data-eval-idle-msec="1000">
+(reset! colour "green")
+</code></pre>
 
-<h3 id="url-parameters">URL Parameters</h3>
+<p>
+Here is our data:
+</p>
 
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the report to retrieve</td>
-</tr>
-</tbody></table>
+<pre ><code class="klipse" >
+(def test-board
+  '[
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . i . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . i i . . . . . . i i . . . . . . . . . . . . i i . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . i . . . i . . . . i i . . . . . . . . . . . . i i . . . . . . . . . . . . . . . . . . . . . . .
+    . i i . . . . . . . . i . . . . . i . . . i i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . i i . . . . . . . . i . . . i . i i . . . . i . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . i . . . . . i . . . . . . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . i . . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . i i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . i . . i . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . i i i i i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . i . i i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . i i i i i i i i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . i . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . i . i i i . . . . . . . . . . i . . . . i . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . i i . . . . . . . . . . . . i . i . . i . i . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . i . . . . . . . . i . i . . . . . . . . . . . . i i . . . i i . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . i . i . . . . . . i . i . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . i . i . . . . . i . . . . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . i . . i . . . . . . . . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . i . . . i . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . i . . . i . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . i . . . . i . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    ])
 
-          <h1 id="errors">Errors</h1>
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
+(def seq-of-game (iterate game-of-life-step {:board test-board}))
 
-<p>The Kittn API uses the following error codes:</p>
+(def s (atom seq-of-game))
 
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
-</tr>
-</tbody></table>
+(defn play []
+  (init)
+  (swap! s rest)
+  (draw @b/arena))
 
-      </div>
-      <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-                <a href="#" data-language-name="clojure">clojure</a>
-                <a href="#" data-language-name="c++">c++</a>
-                <a href="#" data-language-name="c">c</a>
-                <a href="#" data-language-name="java">java</a>
-                <a href="#" data-language-name="php">php</a>
-                <a href="#" data-language-name="lua">lua</a>
-                <a href="#" data-language-name="C#">C#</a>
-                <a href="#" data-language-name="rust">rust</a>
-                <a href="#" data-language-name="perl">perl</a>
-                <a href="#" data-language-name="haskell">haskell</a>
-                <a href="#" data-language-name="PowerShell">PowerShell</a>
-                <a href="#" data-language-name="swift">swift</a>
-                <a href="#" data-language-name="scala">scala</a>
-                <a href="#" data-language-name="go">go</a>
-          </div>
-      </div>
-    </div>
-  </body>
+</code></pre>
+
+
+
+
+
+<pre ><code class="klipse" data-preamble="(do (reset! canvas &#34;canvas--regular-n-gon&#34;) (init))" data-loop-msec="200">
+(play)
+</code></pre>
+
+
+<canvas id="canvas--regular-n-gon" class="center" width="610" height="610"></canvas>
+
+
+<link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+
+<script>
+    window.klipse_settings = {
+        selector: '.klipse',
+        codemirror_options_in: {
+            lineWrapping: true,
+            autoCloseBrackets: true
+        }
+    }
+</script>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+
+</body>
 </html>
